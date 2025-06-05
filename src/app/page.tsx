@@ -446,25 +446,25 @@ const Portfolio = () => {
                       <Sparkle 
                         size={16} 
                         className={`text-zinc-400/70 absolute animate-twinkle1 ${
-                          isMobile ? 'left-[2%] top-[40%]' : 'left-5 top-40'
+                          isMobile ? 'left-[0%] top-[50%]' : 'left-5 top-40'
                         }`} 
                       />
                       <Code2 
                         size={16} 
                         className={`text-zinc-400/70 absolute animate-twinkle2 ${
-                          isMobile ? 'right-[2%] top-[80%]' : 'right-45 top-80'
+                          isMobile ? 'right-[50%] bottom-[0%]' : 'right-45 top-80'
                         }`} 
                       />
                       <DiamondIcon 
                         size={16} 
                         className={`text-zinc-400/70 absolute animate-twinkle3 ${
-                          isMobile ? 'right-[2%] top-[1%]' : 'right-45 top-1'
+                          isMobile ? 'right-[50%] top-[0%]' : 'right-45 top-1'
                         }`} 
                       />
                       <Zap 
                         size={16} 
                         className={`text-zinc-400/70 absolute animate-twinkle4 ${
-                          isMobile ? 'right-[2%] top-[40%]' : 'right-5 top-40'
+                          isMobile ? 'right-[0%] top-[50%]' : 'right-5 top-40'
                         }`} 
                       />
                     </div>
