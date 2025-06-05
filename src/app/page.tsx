@@ -148,48 +148,47 @@ const Portfolio = () => {
       id: 2,
       title: "DeepVoxel: A 3D MRI Visualizer for Neural Networks",
       type: "ML + Interactive Design",
-      description: "Real-time visualization of neural network training with elegant animations and intuitive controls for exploring model behavior.",
-      fullDescription: "An advanced web application that provides real-time visualization of neural network training processes. Built with TensorFlow.js for in-browser model training, D3.js for dynamic visualizations, and React for seamless user interactions.",
-      tags: ["TensorFlow.js", "D3.js", "React", "WebGL", "Python"],
+      description: "Real-time visualization of 3D MRI scans and segmentation with elegant animations and intuitive visulaizations for Medical Analysis.",
+      fullDescription: "An advanced web application that provides real-time visualization of medical semantic-segmentation. Built with Next.js and Three.js for in-browser model viewing, D3 for dynamic visualizations, and ONNX for seamless backend integation.",
+      tags: ["Next.js", "Three.js", "PyTorch", "ONNX", "Flask"],
       status: "Live" as const,
       year: "2024",
       timeline: "3 months",
-      role: "Full Stack ML Engineer & Designer",
+      role: "Full Stack DL Engineer & Designer",
       challenges: [
         "Real-time performance optimization for complex visualizations",
-        "Creating intuitive interfaces for complex ML concepts",
+        "Creating intuitive interfaces for complex Deep Learning concepts",
         "Cross-browser WebGL compatibility"
       ],
       outcomes: [
-        "Used by 10k+ students for ML education",
-        "Featured in TensorFlow community showcase",
-        "98% user satisfaction rate"
+        "Real-time 3D model viewing and generating segmentation visualizations.",
+        "Lightweight segmentation with 50% inference time reduction on low-power GPUs"
       ],
       github: "https://github.com",
       demo: "https://demo.com"
     },
-    {
-      id: 3,
-      title: "Predictive Analytics Dashboard",
-      type: "Full Stack + ML",
-      description: "End-to-end platform for time series forecasting with beautiful data storytelling and interactive model exploration.",
-      fullDescription: "A comprehensive analytics platform that combines advanced time series forecasting with intuitive data visualization. Features custom Prophet models, real-time data ingestion, and interactive exploration tools.",
-      tags: ["Prophet", "FastAPI", "Next.js", "D3", "PostgreSQL"],
-      status: "Production" as const,
-      year: "2023",
-      timeline: "8 months",
-      role: "Technical Lead & Product Designer",
-      challenges: [
-        "Handling high-frequency time series data",
-        "Creating intuitive ML model explanations",
-        "Scaling to enterprise-level data volumes"
-      ],
-      outcomes: [
-        "Improved forecast accuracy by 35%",
-        "Reduced decision-making time by 60%",
-        "Processing 1M+ data points daily"
-      ]
-    }
+    // {
+    //   id: 3,
+    //   title: "Predictive Analytics Dashboard",
+    //   type: "Full Stack + ML",
+    //   description: "End-to-end platform for time series forecasting with beautiful data storytelling and interactive model exploration.",
+    //   fullDescription: "A comprehensive analytics platform that combines advanced time series forecasting with intuitive data visualization. Features custom Prophet models, real-time data ingestion, and interactive exploration tools.",
+    //   tags: ["Prophet", "FastAPI", "Next.js", "D3", "PostgreSQL"],
+    //   status: "Production" as const,
+    //   year: "2023",
+    //   timeline: "8 months",
+    //   role: "Technical Lead & Product Designer",
+    //   challenges: [
+    //     "Handling high-frequency time series data",
+    //     "Creating intuitive ML model explanations",
+    //     "Scaling to enterprise-level data volumes"
+    //   ],
+    //   outcomes: [
+    //     "Improved forecast accuracy by 35%",
+    //     "Reduced decision-making time by 60%",
+    //     "Processing 1M+ data points daily"
+    //   ]
+    // }
   ];
 
   const experience = [
