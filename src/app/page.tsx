@@ -54,11 +54,34 @@ interface Project {
   demo?: string;
 }
 
+// Add this hook before the Portfolio component
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    checkIsMobile();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIsMobile);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  return isMobile;
+};
+
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   // Seeded random number generator with fixed precision
   const seededRandom = (seed: number) => {
@@ -235,32 +258,34 @@ const Portfolio = () => {
           {/* Soft white glow */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,.02)_0%,transparent_100%)]" />
           
-          {/* Subtle stars */}
-          <div className="absolute inset-0">
-            {[...Array(30)].map((_, i) => {
-              const left = seededRandom(i * 1.1) * 100;
-              const top = seededRandom(i * 1.2) * 100;
-              const delay = seededRandom(i * 1.3) * 5;
-              const duration = 80 + seededRandom(i * 1.4) * 20;
-              const opacity = 0.1 + seededRandom(i * 1.5) * 0.4;
-              const scale = 0.5 + seededRandom(i * 1.6) * 0.5;
+          {/* Subtle stars - only render on desktop */}
+          {!isMobile && (
+            <div className="absolute inset-0">
+              {[...Array(30)].map((_, i) => {
+                const left = seededRandom(i * 1.1) * 100;
+                const top = seededRandom(i * 1.2) * 100;
+                const delay = seededRandom(i * 1.3) * 5;
+                const duration = 80 + seededRandom(i * 1.4) * 20;
+                const opacity = 0.1 + seededRandom(i * 1.5) * 0.4;
+                const scale = 0.5 + seededRandom(i * 1.6) * 0.5;
 
-              return (
-                <div
-                  key={i}
-                  className="falling-star fixed"
-                  style={{
-                    left: `${left}%`,
-                    top: `${top}%`,
-                    animationDelay: `${delay}s`,
-                    animationDuration: `${duration}s`,
-                    opacity,
-                    transform: `scale(${scale})`
-                  }}
-                />
-              );
-            })}
-          </div>
+                return (
+                  <div
+                    key={i}
+                    className="falling-star fixed"
+                    style={{
+                      left: `${left}%`,
+                      top: `${top}%`,
+                      animationDelay: `${delay}s`,
+                      animationDuration: `${duration}s`,
+                      opacity,
+                      transform: `scale(${scale})`
+                    }}
+                  />
+                );
+              })}
+            </div>
+          )}
           
           {/* Vertical gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
