@@ -574,77 +574,96 @@ const Portfolio = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 <CardContent className="p-0">
-                  <div className="grid lg:grid-cols-5 gap-0">
+                  <div className="grid lg:grid-cols-5 gap-8">
+                    <div className="lg:col-span-3 p-8 space-y-6">
+                      <div className="space-y-4">
+                          <div className="flex items-center justify-between">
+                            <Badge variant="outline" className="border-zinc-700 text-zinc-400">
+                            {project.type}
+                            </Badge>
+                          <span className="text-sm text-zinc-500">{project.year}</span>
+                        </div>
+                        
+                          <h3 className="text-3xl font-bold text-zinc-100 group-hover:text-zinc-200 transition-colors duration-300">
+                          {project.title}
+                        </h3>
+                        
+                          <p className="text-lg text-zinc-400 leading-relaxed">
+                          {project.description}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag, tagIndex) => (
+                              <Badge
+                              key={tagIndex}
+                                variant="secondary"
+                                className="bg-zinc-800/50 text-zinc-300 border-zinc-700/50 hover:bg-zinc-700/50 transition-colors duration-300"
+                              >
+                                {tag}
+                              </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      
+                        <div className="flex items-center space-x-4">
+                          <Button variant="ghost" className="text-zinc-400 hover:text-zinc-100 p-0 h-auto font-medium group/btn">
+                            View Details
+                            <ChevronRight size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                          </Button>
+                          {project.github && (
+                            <Button variant="ghost" size="sm" className="text-zinc-500 hover:text-zinc-300">
+                              <Github size={16} />
+                            </Button>
+                          )}
+                          {project.demo && (
+                            <Button variant="ghost" size="sm" className="text-zinc-500 hover:text-zinc-300">
+                              <ArrowUpRight size={16} />
+                            </Button>
+                          )}
+                    </div>
+                  </div>
+                    
                     <div className="lg:col-span-2 relative aspect-[4/3] lg:aspect-auto">
-                      <div className="absolute inset-0 bg-gradient-to-br from-zinc-800/50 via-zinc-900/30 to-zinc-950/50 flex items-center justify-center group-hover:from-zinc-700/50 transition-all duration-500">
-                        <div className="text-6xl text-zinc-600/30 font-mono group-hover:text-zinc-500/40 group-hover:scale-110 transition-all duration-500">
-                          {String(index + 1).padStart(2, '0')}
-                      </div>
-                      <div className="absolute top-4 right-4 flex items-center space-x-2">
-                        <div className={`w-3 h-3 rounded-full animate-pulse ${
-                            project.status === 'Live' ? 'bg-emerald-400' :
-                          project.status === 'Beta' ? 'bg-yellow-400' :
-                          'bg-blue-400'
-                        }`} />
-                          <Badge variant="secondary" className="bg-zinc-800/80 text-zinc-300 text-xs">
-                            {project.status}
-                          </Badge>
-                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-zinc-800/50 via-zinc-900/30 to-zinc-950/50 flex items-center justify-center group-hover:from-zinc-700/50 transition-all duration-500 rounded-2xl overflow-hidden" style={{ margin: '1rem', marginRight: '2rem' }}>
+                        {project.id === 1 && (
+                          <video
+                            className="absolute inset-0 w-full h-full object-cover object-center opacity-70 group-hover:opacity-90 transition-opacity duration-500 rounded-2xl"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                          >
+                            <source src="/ether.mp4" type="video/mp4" />
+                          </video>
+                        )}
+                        {project.id === 2 && (
+                          <video
+                            className="absolute inset-0 w-full h-full object-cover object-center opacity-70 group-hover:opacity-90 transition-opacity duration-500 rounded-2xl"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                          >
+                            <source src="/deepvoxel.mp4" type="video/mp4" />
+                          </video>
+                        )}
+                        <div className="absolute top-4 right-4 flex items-center space-x-2">
+                          <div className={`w-3 h-3 rounded-full animate-pulse ${
+                              project.status === 'Live' ? 'bg-emerald-400' :
+                            project.status === 'Beta' ? 'bg-yellow-400' :
+                            'bg-blue-400'
+                          }`} />
+                            <Badge variant="secondary" className="bg-zinc-800/80 text-zinc-300 text-xs backdrop-blur-sm">
+                              {project.status}
+                            </Badge>
+                        </div>
                         <div className="absolute bottom-4 left-4 flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <Play size={16} className="text-zinc-400" />
                           <span className="text-xs text-zinc-400">View Details</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  
-                    <div className="lg:col-span-3 p-8 space-y-6">
-                    <div className="space-y-4">
-                        <div className="flex items-center justify-between">
-                          <Badge variant="outline" className="border-zinc-700 text-zinc-400">
-                          {project.type}
-                          </Badge>
-                        <span className="text-sm text-zinc-500">{project.year}</span>
-                      </div>
-                      
-                        <h3 className="text-3xl font-bold text-zinc-100 group-hover:text-zinc-200 transition-colors duration-300">
-                        {project.title}
-                      </h3>
-                      
-                        <p className="text-lg text-zinc-400 leading-relaxed">
-                        {project.description}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag, tagIndex) => (
-                            <Badge
-                            key={tagIndex}
-                              variant="secondary"
-                              className="bg-zinc-800/50 text-zinc-300 border-zinc-700/50 hover:bg-zinc-700/50 transition-colors duration-300"
-                          >
-                            {tag}
-                            </Badge>
-                        ))}
-                      </div>
-                    </div>
-                    
-                      <div className="flex items-center space-x-4">
-                        <Button variant="ghost" className="text-zinc-400 hover:text-zinc-100 p-0 h-auto font-medium group/btn">
-                          View Details
-                          <ChevronRight size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                        </Button>
-                        {project.github && (
-                          <Button variant="ghost" size="sm" className="text-zinc-500 hover:text-zinc-300">
-                            <Github size={16} />
-                          </Button>
-                        )}
-                        {project.demo && (
-                          <Button variant="ghost" size="sm" className="text-zinc-500 hover:text-zinc-300">
-                            <ArrowUpRight size={16} />
-                          </Button>
-                        )}
-                  </div>
-                </div>
-              </div>
                 </CardContent>
               </Card>
             ))}
