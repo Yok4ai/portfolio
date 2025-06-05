@@ -261,11 +261,13 @@ const Portfolio = () => {
           {/* Subtle stars - only render on desktop */}
           {!isMobile && (
             <div className="absolute inset-0">
-              {[...Array(30)].map((_, i) => {
+              {[...Array(100)].map((_, i) => {
                 const left = seededRandom(i * 1.1) * 100;
                 const top = seededRandom(i * 1.2) * 100;
-                const delay = seededRandom(i * 1.3) * 5;
-                const duration = 80 + seededRandom(i * 1.4) * 20;
+                // Distribute delays evenly across the total duration to avoid gaps
+                const totalDuration = 100; // Total animation cycle
+                const delay = (i * totalDuration) / 100; // Evenly distribute delays
+                const duration = totalDuration; // Same duration for all stars
                 const opacity = 0.1 + seededRandom(i * 1.5) * 0.4;
                 const scale = 0.5 + seededRandom(i * 1.6) * 0.5;
 
@@ -278,6 +280,7 @@ const Portfolio = () => {
                       top: `${top}%`,
                       animationDelay: `${delay}s`,
                       animationDuration: `${duration}s`,
+                      animationIterationCount: 'infinite',
                       opacity,
                       transform: `scale(${scale})`
                     }}

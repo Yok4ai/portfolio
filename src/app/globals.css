@@ -83,7 +83,7 @@
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -92,7 +92,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: rgb(113 113 122);
-  border-radius: 3px;
+  border-radius: 30px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
