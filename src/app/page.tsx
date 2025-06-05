@@ -369,30 +369,28 @@ const Portfolio = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <Badge variant="secondary" className="bg-zinc-900/50 text-zinc-300 border-zinc-800/50 backdrop-blur-sm">
+                <Badge variant="secondary" className="bg-zinc-900/50 text-zinc-300 border-zinc-800/50 backdrop-blur-sm animate-fade-in-blur" style={{ animationDelay: '0.2s' }}>
                   <div className="w-2 h-2 bg-zinc-400 rounded-full animate-pulse mr-2" />
                   Available for new opportunities
                 </Badge>
                 
-                <h1 className="text-6xl lg:text-7xl font-bold leading-tight">
-                  <span className="block text-zinc-100">Imroz</span>
-                  <span className="block bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-100 bg-clip-text text-transparent">
-                    Eshan
+                <h1 className="text-6xl lg:text-7xl font-bold leading-tight animate-fade-in-blur" style={{ animationDelay: '0.3s' }}>
+                  <span className="inline-block bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-100 bg-clip-text text-transparent">
+                    Imroz Eshan
                   </span>
-                  {/* <span className="block text-zinc-400">experiences</span> */}
                 </h1>
                 
                 <div className="space-y-4">
-                  <p className="text-xl text-zinc-300 leading-relaxed">
+                  <p className="text-xl text-zinc-300 leading-relaxed animate-fade-in-blur" style={{ animationDelay: '0.4s' }}>
                     Machine Learning Engineer <span className="font-bold text-white glow-x">×</span> Software Architect <span className="font-bold text-white glow-x">×</span> UX Designer
                   </p>
-                  <p className="text-lg text-zinc-500">
-                  Bringing structure to code, soul to design, and intelligence to everything I build.
+                  <p className="text-lg text-zinc-500 animate-fade-in-blur" style={{ animationDelay: '0.5s' }}>
+                    Bringing structure to code, soul to design, and intelligence to everything I build.
                   </p>
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-blur" style={{ animationDelay: '0.6s' }}>
                 <Button 
                   size="lg"
                   onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
@@ -414,7 +412,7 @@ const Portfolio = () => {
             </div>
 
             {/* Enhanced Hero Visual */}
-            <div className="relative flex justify-center lg:justify-end">
+            <div className="relative flex justify-center lg:justify-end animate-fade-in-blur" style={{ animationDelay: '0.7s' }}>
               <div className="relative w-80 h-80 lg:w-96 lg:h-96">
                 <Card className="relative w-full h-full bg-zinc-900/30 border-zinc-800/30 backdrop-blur-2xl overflow-hidden group hover:border-zinc-700/30 transition-all duration-500 rounded-3xl">
                   <CardContent className="p-0 h-full relative">
