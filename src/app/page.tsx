@@ -443,10 +443,30 @@ const Portfolio = () => {
 
                     {/* Twinkling icons inside the hero card */}
                     <div className="pointer-events-none">
-                      <Sparkle size={16} className="text-zinc-400/70 absolute left-5 top-40 animate-twinkle1" />
-                      <Code2 size={16} className="text-zinc-400/70 absolute right-45 top-80 animate-twinkle2" />
-                      <DiamondIcon size={16} className="text-zinc-400/70 absolute right-45 top-1 animate-twinkle3" />
-                      <Zap size={16} className="text-zinc-400/70 absolute right-5 top-40 animate-twinkle4" />
+                      <Sparkle 
+                        size={16} 
+                        className={`text-zinc-400/70 absolute animate-twinkle1 ${
+                          isMobile ? 'left-[2%] top-[40%]' : 'left-5 top-40'
+                        }`} 
+                      />
+                      <Code2 
+                        size={16} 
+                        className={`text-zinc-400/70 absolute animate-twinkle2 ${
+                          isMobile ? 'right-[2%] top-[80%]' : 'right-45 top-80'
+                        }`} 
+                      />
+                      <DiamondIcon 
+                        size={16} 
+                        className={`text-zinc-400/70 absolute animate-twinkle3 ${
+                          isMobile ? 'right-[2%] top-[1%]' : 'right-45 top-1'
+                        }`} 
+                      />
+                      <Zap 
+                        size={16} 
+                        className={`text-zinc-400/70 absolute animate-twinkle4 ${
+                          isMobile ? 'right-[2%] top-[40%]' : 'right-5 top-40'
+                        }`} 
+                      />
                     </div>
                   </CardContent>
                 </Card>
