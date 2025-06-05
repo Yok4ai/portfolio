@@ -685,6 +685,16 @@ const Portfolio = () => {
                     imrozeshan@gmail.com
                   </Button>
                 </div>
+              <div className="flex items-center space-x-3">
+                <Linkedin size={18} className="text-zinc-500" />
+                <Button 
+                  variant="link"
+                  onClick={() => window.open('https://www.linkedin.com/in/imroz-eshan/', '_blank')}
+                  className="text-zinc-300 hover:text-zinc-100 p-0 h-auto underline underline-offset-4"
+                >
+                  LinkedIn Profile
+                </Button>
+              </div>
               </div>
             </div>
             
