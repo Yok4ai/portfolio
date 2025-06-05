@@ -446,7 +446,7 @@ const Portfolio = () => {
                       <Sparkle 
                         size={16} 
                         className={`text-zinc-400/70 absolute animate-twinkle1 ${
-                          isMobile ? 'left-[0%] top-[50%]' : 'left-5 top-40'
+                          isMobile ? 'left-[5%] top-[50%]' : 'left-5 top-40'
                         }`} 
                       />
                       <Code2 
@@ -464,7 +464,7 @@ const Portfolio = () => {
                       <Zap 
                         size={16} 
                         className={`text-zinc-400/70 absolute animate-twinkle4 ${
-                          isMobile ? 'right-[0%] top-[50%]' : 'right-5 top-40'
+                          isMobile ? 'right-[5%] top-[50%]' : 'right-5 top-40'
                         }`} 
                       />
                     </div>
