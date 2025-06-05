@@ -147,7 +147,7 @@ const Portfolio = () => {
     {
       id: 2,
       title: "DeepVoxel: A 3D MRI Visualizer for Neural Networks",
-      type: "ML + Interactive Design",
+      type: "DL + Interactive Design",
       description: "Real-time visualization of 3D MRI scans and segmentation with elegant animations and intuitive visulaizations for Medical Analysis.",
       fullDescription: "An advanced web application that provides real-time visualization of medical semantic-segmentation. Built with Next.js and Three.js for in-browser model viewing, D3 for dynamic visualizations, and ONNX for seamless backend integation.",
       tags: ["Next.js", "Three.js", "PyTorch", "ONNX", "Flask"],
