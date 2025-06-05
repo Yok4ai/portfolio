@@ -298,8 +298,11 @@ const Portfolio = () => {
           <div className="flex justify-between items-center">
             <div className="text-xl font-bold tracking-tight">
               <span className="text-zinc-600">&lt;</span>
-              <span className="bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-100 bg-clip-text text-transparent glow-x ripple-portfolio sliding-glow">
-                portfolio
+              <span 
+                className="bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-100 bg-clip-text text-transparent glow-x ripple-portfolio sliding-glow cursor-pointer"
+                onClick={() => window.location.href = '/'}
+              >
+                home
               </span>
               <span className="text-zinc-600">/&gt;</span>
             </div>
